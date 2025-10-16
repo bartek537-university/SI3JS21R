@@ -1,54 +1,25 @@
-import random
+from typing import Callable
+
+from sorting_algorithms import bubble_sort, insertion_sort, quick_sort
+
+with open("38_unsorted.txt") as input_file:
+    unsorted_numbers = [int(line) for line in input_file]
+
+algorithms = [
+    (lambda numbers: bubble_sort(numbers), "bubble_sort"),
+    (lambda numbers: insertion_sort(numbers), "insertion_sort"),
+    (lambda numbers: quick_sort(numbers, 0, len(numbers)), "quick_sort"),
+]
 
 
-def bubble_sort(array: list[...]) -> None:
-    for i in range(len(array)):
-        for j in range(len(array) - i - 1):
-            if array[j] > array[j + 1]:
-                array[j], array[j + 1] = array[j + 1], array[j]
+def sorted_with(fn: Callable[[list[...]], None], values: list[...]) -> list[...]:
+    values_copy = values[:]
+    fn(values_copy)
+    return values_copy
 
 
-def insertion_sort(array: list[...]) -> None:
-    for i in range(1, len(array)):
-        current_value = array[i]
-        j = i
+for algorithm, name in algorithms:
+    sorted_numbers = sorted_with(algorithm, unsorted_numbers)
 
-        while j >= 1 and array[j - 1] > current_value:
-            array[j] = array[j - 1]
-            j -= 1
-
-        array[j] = current_value
-
-
-def quick_sort(array: list[...], start: int, end: int) -> None:
-    if end - start < 1:
-        return
-
-    pivot_index = end - 1
-    pivot_value = array[pivot_index]
-
-    partition_index = start
-    for i in range(start, end - 1):
-        if array[i] < pivot_value:
-            array[i], array[partition_index] = array[partition_index], array[i]
-            partition_index += 1
-
-    array[pivot_index], array[partition_index] = array[partition_index], array[pivot_index]
-
-    quick_sort(array, start, partition_index)
-    quick_sort(array, partition_index + 1, end)
-
-
-a = [6, 3, 6, 2, 7, 3, 6, 9, 34, -19, 3, 7, 3, 56, 235]
-
-random.shuffle(a)
-bubble_sort(a)
-print(a)
-
-random.shuffle(a)
-insertion_sort(a)
-print(a)
-
-random.shuffle(a)
-quick_sort(a, 0, len(a))
-print(a)
+    with open(f"38_sorted_{name}.txt", "w+") as output_file:
+        output_file.writelines([f"{number}\n" for number in sorted_numbers])
