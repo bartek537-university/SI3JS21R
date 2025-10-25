@@ -3,7 +3,7 @@ import random
 a = int(input("Podaj początek przedziału: "))
 b = int(input("Podaj koniec przedziału: "))
 
-random_number = random.randrange(a, b + 1)
+random_number = random.randint(a, b)
 
 file_name = input("Podaj nazwę pliku: ")
 

@@ -1,13 +1,11 @@
 from statistics import mean, median
 
+number_count = int(input("Podaj ilość liczb: "))
 numbers: list[int] = []
 
-while True:
-    number = int(input("Podaj liczbę: "))
-    numbers.append(number)
-
-    if input("Chcesz dodać kolejną liczbę? [T/n] ").lower() == 'n':
-        break
+for number_index in range(number_count):
+    number_value = int(input(f"[{number_index + 1}]: "))
+    numbers.append(number_value)
 
 print(f"Suma elementów wynosi {sum(numbers)}.")
 print(f"Średnia elementów wynosi {mean(numbers)}.")

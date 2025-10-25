@@ -1,6 +1,6 @@
 from typing import Final
 
-VOWELS: Final[str] = "aeiouy"
+VOWELS: Final[str] = "aeiouyąęó"
 
 input_text = input("Podaj dowolny tekst: ")
 
