@@ -1,6 +1,6 @@
 import bisect
 
-from python.coding_algorithms import CodingFactory, Decoder, Encoder, TreeNode, WeightedTreeNode
+from python.tasks_41_60.coding_algorithms import CodingFactory, Decoder, Encoder, TreeNode, WeightedTreeNode
 
 
 class HuffmanCodingFactory(CodingFactory):

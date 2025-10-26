@@ -3,7 +3,7 @@ from __future__ import annotations
 import math
 from typing import Final
 
-from python.coding_algorithms import CodingFactory, Decoder, Encoder, TreeNode
+from coding_algorithms import CodingFactory, Decoder, Encoder, TreeNode
 
 
 class ShannonFanoCodingFactory(CodingFactory):
