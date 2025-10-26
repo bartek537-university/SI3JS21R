@@ -21,5 +21,5 @@ def _cross_product(current_result: list[...], array_index: int, *arrays: list[An
 
 
 for index, label in enumerate(cross_product(genders, colors, sizes)):
-    with open(f"34_metki/metka_{index}.txt", "w+") as label_file:
+    with open(f"metki/metka_{index}.txt", "w+") as label_file:
         label_file.write(" ".join(label) + "\n")

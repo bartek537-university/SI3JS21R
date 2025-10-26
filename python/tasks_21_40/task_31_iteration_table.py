@@ -1,7 +1,7 @@
 from io import TextIOWrapper
 from typing import Final
 
-output_file_name = input("Podaj nazwę pliku: ")
+output_file_name = input("Podaj nazwę pliku wyjściowego: ")
 iterations = int(input("Podaj ilość iteracji: "))
 value_delta = int(input("Podaj podstawę iteracji: "))
 

@@ -3,7 +3,7 @@ from datetime import timedelta, datetime
 from io import TextIOWrapper
 from typing import Final, Callable
 
-from python.sorting_algorithms import bubble_sort, insertion_sort, quick_sort
+from python.tasks_21_40.sorting_algorithms import bubble_sort, insertion_sort, quick_sort
 
 
 def load_numbers_from_file(file_name: str) -> list[float]:
@@ -12,10 +12,10 @@ def load_numbers_from_file(file_name: str) -> list[float]:
 
 
 UNSORTED_NUMBERS_FILE_NAMES: Final[list[str]] = [
-    "40_unsorted_a.txt",
-    "40_unsorted_b.txt",
-    "40_unsorted_c.txt",
-    "40_unsorted_d.txt",
+    "nieposortowane_a.txt",
+    "nieposortowane_b.txt",
+    "nieposortowane_c.txt",
+    "nieposortowane_d.txt",
 ]
 
 unsorted_numbers: list[list[float]] = []
@@ -62,17 +62,17 @@ def file_write_benchmark_results(file_writer: TextIOWrapper, results: list[Bench
         write_file_line(file_writer, [
             f"{index + 1}. {result.algorithm_name}",
             len(result),
-            f"{result.get_mean_time_seconds()} s",
-            f"{result.get_standard_deviation_seconds()} s",
+            f"{result.get_mean_time_seconds():f} s",
+            f"{result.get_standard_deviation_seconds():f} s",
         ], COLUMN_DELIMITER)
 
 
 Algorithm = tuple[str, Callable[[list[...]], None]]
 
 ALGORITHMS: Final[list[Algorithm]] = [
-    ("bubble_sort", lambda numbers: bubble_sort(numbers)),
-    ("insertion_sort", lambda numbers: insertion_sort(numbers)),
-    ("quick_sort", lambda numbers: quick_sort(numbers, 0, len(numbers))),
+    ("bąbelkowe", lambda numbers: bubble_sort(numbers)),
+    ("przez wstawienie", lambda numbers: insertion_sort(numbers)),
+    ("szybkie", lambda numbers: quick_sort(numbers, 0, len(numbers))),
 ]
 
 benchmark_results: list[BenchmarkResult] = []

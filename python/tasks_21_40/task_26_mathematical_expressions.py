@@ -37,6 +37,8 @@ def task_d(x: float, iterations: int = 100) -> float:
 
 
 def task_e(arg_as: list[float], arg_bs: list[float], x: float, l: float, iterations: int = 100) -> float:
+    assert len(arg_as) >= iterations and len(arg_bs) >= iterations
+
     total = arg_as[0]
 
     for n in range(1, iterations):
@@ -45,4 +47,5 @@ def task_e(arg_as: list[float], arg_bs: list[float], x: float, l: float, iterati
 
     return total
 
-print(task_e([1,2,3,4,5], [1,2,3,4,5], 1, 1, 5))
+
+print(task_e([1, 2, 3, 4, 5], [1, 2, 3, 4, 5], 1, 1, 5))
