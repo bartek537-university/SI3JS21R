@@ -24,12 +24,12 @@ def insort[T](array: list[T], value: T, key: Callable[[T], int]) -> None:
 
 class HuffmanCodingFactory(CodingFactory):
     def __init__(self, text: str):
-        self._text = text
-        self._letter_counts = CodingFactory._count_letters(text)
+        self.__text = text
+        self.__letter_counts = CodingFactory._count_letters(text)
 
     def build(self) -> TreeNode[str]:
         leaves: list[WeightedTreeNode[str | None]] = [
-            WeightedTreeNode(letter, count) for letter, count in self._letter_counts
+            WeightedTreeNode(letter, count) for letter, count in self.__letter_counts
         ]
         leaves.sort(key=lambda leaf: leaf.weight)
 
