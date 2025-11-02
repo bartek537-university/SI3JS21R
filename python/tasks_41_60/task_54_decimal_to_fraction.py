@@ -1,6 +1,6 @@
 import math
 
-entered_number = input()
+entered_number = input("in: ")
 
 if "." in entered_number:
     integral_text, decimal_text = entered_number.split(".")
@@ -14,4 +14,4 @@ if "." in entered_number:
     denominator //= fraction_gcd
     nominator //= fraction_gcd
 
-    print(f"{nominator}/{denominator}")
+    print(f"out: {nominator}/{denominator}")
