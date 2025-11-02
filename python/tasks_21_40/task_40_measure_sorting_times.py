@@ -1,4 +1,4 @@
-import statistics
+import math
 from datetime import timedelta, datetime
 from io import TextIOWrapper
 from typing import Final, Callable
@@ -24,6 +24,19 @@ for unsorted_numbers_file_name in UNSORTED_NUMBERS_FILE_NAMES:
     unsorted_numbers.append(load_numbers_from_file(unsorted_numbers_file_name))
 
 
+def mean(values: list[float]) -> float:
+    return sum(values) / len(values)
+
+
+def variance(values: list[float]) -> float:
+    nominator = sum(map(lambda value: value * value, values))
+    return nominator / len(values) - math.pow(mean(values), 2)
+
+
+def stddev(values: list[float]) -> float:
+    return math.sqrt(variance(values))
+
+
 class BenchmarkResult:
     def __init__(self, algorithm_name: str, measurements: list[timedelta]):
         self.algorithm_name = algorithm_name
@@ -37,10 +50,10 @@ class BenchmarkResult:
         return len(self.measurements_seconds)
 
     def get_mean_time_seconds(self) -> float:
-        return statistics.mean(self.measurements_seconds)
+        return mean(self.measurements_seconds)
 
     def get_standard_deviation_seconds(self) -> float:
-        return statistics.stdev(self.measurements_seconds)
+        return stddev(self.measurements_seconds)
 
 
 def write_file_line(file_writer: TextIOWrapper, values: list[...], delimiter: str = " ") -> None:
