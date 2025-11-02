@@ -14,7 +14,7 @@ class ShannonFanoCodingFactory(CodingFactory):
         self._text = text
         self._letter_counts = CodingFactory._count_letters(text)
 
-    def _get_splitter_position(self, start: int, end: int) -> int:
+    def __get_splitter_position(self, start: int, end: int) -> int:
         if end - start < 2:
             raise ValueError("Not enough values to split.", end - start)
 
@@ -34,26 +34,26 @@ class ShannonFanoCodingFactory(CodingFactory):
 
         return minimum_counts_delta[0]
 
-    def _create_code(self, start: int, end: int, result: TreeNode[str | None]) -> None:
+    def __create_code(self, start: int, end: int, result: TreeNode[str | None]) -> None:
         if end - start < 1:
             return
         if end - start < 2:
             result.value = self._letter_counts[start][ShannonFanoCodingFactory.LETTER_VALUE_KEY]
             return
 
-        splitter_position = self._get_splitter_position(start, end)
+        splitter_position = self.__get_splitter_position(start, end)
 
         result.left = TreeNode(None)
         result.right = TreeNode(None)
 
-        self._create_code(start, splitter_position, result.left)
-        self._create_code(splitter_position, end, result.right)
+        self.__create_code(start, splitter_position, result.left)
+        self.__create_code(splitter_position, end, result.right)
 
     def build(self) -> TreeNode[str]:
         self._letter_counts.sort(key=lambda count: count[ShannonFanoCodingFactory.LETTER_COUNT_KEY], reverse=True)
 
         result_coding = TreeNode[str | None](None)
-        self._create_code(0, len(self._letter_counts), result_coding)
+        self.__create_code(0, len(self._letter_counts), result_coding)
         return result_coding
 
 

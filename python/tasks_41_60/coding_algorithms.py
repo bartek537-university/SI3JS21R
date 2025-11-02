@@ -39,7 +39,7 @@ class CodingFactory(ABC):
 
 class Encoder:
     @staticmethod
-    def _coding_tree_to_coding_table(coding_tree: TreeNode[str | None]) -> dict[str, str]:
+    def __coding_tree_to_coding_table(coding_tree: TreeNode[str | None]) -> dict[str, str]:
         coding_table: dict[str, str] = {}
 
         def m_to_coding_table(node: TreeNode[str | None], current_code: str) -> None:
@@ -57,7 +57,7 @@ class Encoder:
 
     @staticmethod
     def encode(clear_text: str, coding_tree: TreeNode[str | None]) -> str:
-        coding_table = Encoder._coding_tree_to_coding_table(coding_tree)
+        coding_table = Encoder.__coding_tree_to_coding_table(coding_tree)
         return "".join([coding_table[letter] for letter in clear_text])
 
 

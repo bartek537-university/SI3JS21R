@@ -40,10 +40,10 @@ def stddev(values: list[float]) -> float:
 class BenchmarkResult:
     def __init__(self, algorithm_name: str, measurements: list[timedelta]):
         self.algorithm_name = algorithm_name
-        self.measurements_seconds = BenchmarkResult._convert_measurements_to_seconds(measurements)
+        self.measurements_seconds = BenchmarkResult.__convert_measurements_to_seconds(measurements)
 
     @staticmethod
-    def _convert_measurements_to_seconds(measurements: list[timedelta]) -> list[float]:
+    def __convert_measurements_to_seconds(measurements: list[timedelta]) -> list[float]:
         return [measurement.total_seconds() for measurement in measurements]
 
     def __len__(self):
