@@ -46,6 +46,3 @@ def task_e(arg_as: list[float], arg_bs: list[float], x: float, l: float, iterati
         total += arg_as[n] * math.cos(angle) + arg_bs[n] * math.sin(angle)
 
     return total
-
-
-print(task_e([1, 2, 3, 4, 5], [1, 2, 3, 4, 5], 1, 1, 5))

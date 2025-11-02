@@ -15,3 +15,5 @@ if "." in entered_number:
     nominator //= fraction_gcd
 
     print(f"out: {nominator}/{denominator}")
+else:
+    print(entered_number)
