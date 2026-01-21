@@ -1,0 +1,5 @@
+../tasks_21_40/pliki_katalogi.txt
+../tasks_21_40/wynik_23.txt
+../tasks_21_40/wynik_36.txt
+../tasks_21_40/wynik_22.txt
+../tasks_21_40/wynik_34.txt

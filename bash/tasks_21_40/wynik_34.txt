@@ -1,0 +1,12 @@
+pliki_katalogi.txt
+task_21_ls_to_file.sh
+task_24_backup.sh
+task_25_find_rm.sh
+task_26_prompt.sh
+task_28_menu.sh
+task_29_pause.sh
+task_30_title_prompt.sh
+task_31_title_argument.sh
+task_32_argument_array.sh
+task_33_calling_programs_simple.sh
+task_34_calling_programs_advanced.sh

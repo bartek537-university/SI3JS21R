@@ -1,0 +1,3 @@
+pliki_katalogi.txt
+task_21_ls_to_file.sh
+task_22_run_program
