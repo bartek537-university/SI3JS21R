@@ -1,0 +1,1 @@
+find -L /Volumes/ -type d -maxdepth 2 | sed -e 's|^/Volumes||'

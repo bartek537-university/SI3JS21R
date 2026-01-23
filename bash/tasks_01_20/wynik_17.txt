@@ -1,0 +1,45 @@
+LC_COLLATE=pl_PL.UTF-8 sort -f -o nieposortowane.txt nieposortowane.txt
+ping -c 2 google.commkdir -p ./wczesniej_niz_4_mies
+find ~ -type f -mtime +120 -exec cp {} ./wczesniej_niz_4_mies \;
+find / -type f -perm -u=xfiles=()
+
+while read -r -d '' file; do
+  files+=("$file")
+done < <(find ~ -type f -maxdepth 1 -print0)
+
+echo "${files[@]}"
+
+for a in "${files[@]}"; do
+  for b in "${files[@]}"; do
+    diff "$a" "$b"
+  done
+done
+# Postać stronicowa
+ls -la ~ | more
+
+# Postać ciągła
+ls -la ~vi ./wczesniej_niz_4_mies/plik.txt# Pierwszy komputer
+nc -l 1234
+
+# Drugi komputer (oczywiście zamiast localhost trzeba podstawić właściwego hosta)
+nc localhost 1234scutil --get ComputerName
+
+diskutil list
+
+printf 'Ilość kart sieciowych: %s' "$(networksetup -listallhardwareports | grep -c 'Device')"
+printf '%s\n' "$(networksetup -listallhardwareports)"
+find -L /Volumes/ -type d -maxdepth 2 | sed -e 's|^/Volumes||'find / -type ffind . -type f -name '*.sh' -exec cat {} \; > wynik_17.txtdiskutil listfiles=()
+
+while read -r -d '' file; do
+  files+=("$file")
+done < <(find ~ -type f -maxdepth 1 -print0)
+
+echo "${files[@]}"
+
+for a in "${files[@]}"; do
+  for b in "${files[@]}"; do
+    diff "$a" "$b"
+  done
+done
+printf 'W systemie jest uruchomionych %s procesów.\n' "$(ps -e | wc -l | tr -d '[:space:]' )"sw_verspbpaste
+echo "witaj"

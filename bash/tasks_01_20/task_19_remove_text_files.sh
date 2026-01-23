@@ -1,0 +1,1 @@
+find wcześniej_niż_4_mies -type f -name '*.txt' -exec rm {} \;

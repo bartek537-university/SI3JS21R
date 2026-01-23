@@ -1,0 +1,1 @@
+printf 'W systemie jest uruchomionych %s procesów.\n' "$(ps -e | wc -l | tr -d '[:space:]' )"

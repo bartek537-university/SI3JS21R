@@ -1,0 +1,1 @@
+find . -type f -name '*.sh' -exec cat {} \; > wynik_17.txt

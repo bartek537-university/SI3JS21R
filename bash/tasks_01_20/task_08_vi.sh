@@ -1,0 +1,1 @@
+vi ./wczesniej_niz_4_mies/plik.txt
